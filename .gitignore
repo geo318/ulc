@@ -34,3 +34,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+#custom
+/express/node_modules
+/express/build
+/express/uploads/blur/*
+/express/uploads/images/*
+/server/database/db
