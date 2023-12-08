@@ -10,18 +10,17 @@ export const Navbar: React.FC<NavbarProps> = ({ text, lang, isHomepage }) => {
   return (
     <Header>
       <Section>
-        <div className='flex items-center grow'>
+        <div className='flex items-center grow bg-white bg-opacity-40 rounded-xl mt-12 py-6 px-9'>
           <Link
             href={`/${lang}${routes.home}`}
-            className={'mr-auto mt-auto lg:pl-7 slide-down'}
+            className={'mr-auto mt-auto'}
           >
             <Logo className='lg:w-[12.5rem] mt-auto w-32 z-50' />
-            <Spacer className='lg:block hidden' />
           </Link>
           <Nav
             text={text}
             lang={lang}
-            className='lg:flex hidden ml-auto pt-12 pb-10'
+            className='lg:flex hidden ml-auto '
           />
           <div className='flex gap-6 ml-auto lg:hidden'>
             <Sidebar text={text} lang={lang} className='flex-col text-black' />

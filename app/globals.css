@@ -2,26 +2,135 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer utilities {
+  .txt-balanced {
+    text-wrap: balance;
+  }
+  .txt-pretty {
+    text-wrap: pretty;
+  }
+  .txt-nowrap {
+    text-wrap: nowrap;
+  }
+  .txt-stable {
+    text-wrap: stable;
+  }
+  .txt-wrap {
+    text-wrap: wrap;
+  }
+  .txt-unset {
+    text-wrap: unset;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+header > div,
+header img {
+  transition: 150ms;
+}
+
+.header-small > div {
+  padding: 20px;
+}
+
+.header-small img {
+  width: 100px;
+}
+
+.fade-in {
+  animation: fade-in 500ms forwards ease-in;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.start-animation {
+  translate: -10%;
+  opacity: 0;
+}
+
+.end-animation {
+  translate: 0 0;
+  opacity: 1;
+}
+
+.no-drag {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+.editor ol,
+.editor ul {
+  list-style: revert;
+}
+
+.modal {
+  animation: modal 150ms ease-in-out;
+}
+
+@keyframes modal {
+  from {
+    transform: translateY(10%);
+    opacity: 0.5;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.backdrop {
+  animation: backdrop 250ms ease-in-out;
+}
+
+@keyframes backdrop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fb_dialog_content:after,
+.fb-customerchat:after {
+  content: '';
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #fedb00;
+  height: 60px;
+  width: 60px;
+  background-image: url('https://img.barambo.ge/images/chat-20231129t222230404z.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 36px;
+  border-radius: 60px;
+  box-shadow: 0 0 5px 0px rgb(0 0 0 / 20%);
+  pointer-events: none;
+  z-index: 9999999999;
+}
+
+.fb_dialog_content:hover:after,
+.fb-customerchat:hover:after {
+  box-shadow: 0 0 10px 1px rgb(0 0 0 / 20%);
+}
+
+.fb_dialog_content iframe:first-child {
+  opacity: 0;
+}
+@media screen and (min-width: 1000px) {
+  .slide-down {
+    animation: slide-down 500ms forwards ease-in;
+    animation-delay: 500ms;
+    translate: 0 -32px;
+  }
 }
