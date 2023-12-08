@@ -6,7 +6,7 @@ import { Nav } from './Nav'
 import { Sidebar } from './Sidebar'
 import { Header } from './Header'
 
-export const Navbar: React.FC<NavbarProps> = ({ text, lang, isHomepage }) => {
+export const Navbar: React.FC<NavbarProps> = ({ text, lang }) => {
   return (
     <Header>
       <Section>

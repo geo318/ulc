@@ -22,7 +22,8 @@ export const createModel = async ({
 }: Cruds) => {
   try {
     const mappedEntries = await prepareFormData(formData, imgOptions)
-    if ('error' in mappedEntries) return { error: mappedEntries.error }
+    if ('error' in mappedEntries)
+      return { error: mappedEntries.error as string }
 
     await db.insert(model).values(mappedEntries)
     revalidate.forEach((path) => revalidatePath(path, 'page'))
@@ -43,7 +44,7 @@ export const updateModel = async ({
 }: Cruds) => {
   try {
     const updateValues = await prepareFormData(formData, imgOptions)
-    if ('error' in updateValues) return { error: updateValues.error }
+    if ('error' in updateValues) return { error: updateValues.error as string }
 
     await db
       .update(model)

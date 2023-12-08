@@ -1,5 +1,8 @@
+import { createInsertSchema } from 'drizzle-zod'
 import { locales } from '/config'
 import { getDictionary } from '/lib'
+import { news } from '/server'
+import { z } from 'zod'
 
 export type SetState<T> = React.Dispatch<React.SetStateAction<T>>
 export type Locale = (typeof locales)[number]
@@ -20,3 +23,6 @@ export type FormValues = Record<
   string,
   string | number | Blob | undefined | null
 >
+export const insertNewsSchema = createInsertSchema(news)
+
+export type News = z.infer<typeof insertNewsSchema>
