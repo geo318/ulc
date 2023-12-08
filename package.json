@@ -7,9 +7,11 @@
     "build": "next build",
     "start": "next start -p 3210",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "express:build": "npx tsc",
-    "express:start": "node build/server.js",
-    "lint": "next lint"
+    "lint": "next lint",
+    "migrate": "drizzle-kit generate:sqlite",
+    "migrations:push": "node -r esbuild-register ./server/database/migrate.ts",
+    "db:push": "drizzle-kit push:sqlite",
+    "migrations:drop": "drizzle-kit drop --config=drizzle.config.ts"
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.5.2",
