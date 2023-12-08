@@ -10,4 +10,5 @@ server.use(
 )
 server.use(express.static('uploads'))
 
-server.listen(3244, () => console.log('Server started on port 3344'))
+const port = 3314
+server.listen(port, () => console.log(`Server started on port ${port}`))
