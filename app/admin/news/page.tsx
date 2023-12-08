@@ -26,7 +26,7 @@ export default async function Discovery() {
 
       <section>
         <H tag='h1' size='md' className='mb-20 text-center'>
-          Discover
+          Upload news here
         </H>
         <div className='grid grid-cols-1 gap-5 capitalize'>
           <Suspense fallback={<Spinner />}>

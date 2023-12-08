@@ -29,12 +29,11 @@ export const NewsForm = ({
         {param && <input name='id' defaultValue={param} hidden readOnly />}
         <Input name='title_eng' label='Title Eng' />
         <Input name='title_geo' label='Title Geo' />
-        <Input name='content_eng' label='Blog Eng' height={300} />
-        <Input name='content_geo' label='Blog geo' height={300} />
+        <Input name='title_rus' label='Title Rus' />
+        <Input name='content_eng' label='Description eng' />
+        <Input name='content_geo' label='Description geo' />
+        <Input name='content_rust' label='Description rus' />
         <Input name='thumbnail' label='Thumbnail image' type='file' />
-        <Input name='banner' label='Blog banner' type='file' defaultValue='' />
-        <Input name='link' label='Youtube Link' />
-        <Input name='order' label='Order' type='number' min={0} />
       </FormWrapper>
       {param && deleteAction && (
         <form action={handleDelete}>
