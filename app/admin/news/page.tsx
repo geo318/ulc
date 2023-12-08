@@ -30,17 +30,19 @@ export default async function Discovery() {
         </H>
         <div className='grid grid-cols-1 gap-5 capitalize'>
           <Suspense fallback={<Spinner />}>
-            {news.map((h) => (
-              <div
-                key={h.id}
-                className='flex flex-col gap-3 border border-slate-400 rounded-lg hover:shadow-lg p-5'
-              >
-                {h.title_eng}
-                <div className='flex gap-3 ml-auto'>
-                  <Link href={`?edit=${h.id}`}>Edit</Link>
-                </div>
-              </div>
-            ))}
+            {!news.length
+              ? 'no news yet'
+              : news.map((h) => (
+                  <div
+                    key={h.id}
+                    className='flex flex-col gap-3 border border-slate-400 rounded-lg hover:shadow-lg p-5'
+                  >
+                    {h.title_eng}
+                    <div className='flex gap-3 ml-auto'>
+                      <Link href={`?edit=${h.id}`}>Edit</Link>
+                    </div>
+                  </div>
+                ))}
           </Suspense>
         </div>
       </section>

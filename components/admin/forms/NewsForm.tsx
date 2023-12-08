@@ -32,7 +32,7 @@ export const NewsForm = ({
         <Input name='title_rus' label='Title Rus' />
         <Input name='content_eng' label='Description eng' />
         <Input name='content_geo' label='Description geo' />
-        <Input name='content_rust' label='Description rus' />
+        <Input name='content_rus' label='Description rus' />
         <Input name='thumbnail' label='Thumbnail image' type='file' />
       </FormWrapper>
       {param && deleteAction && (
