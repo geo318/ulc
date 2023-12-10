@@ -20,15 +20,25 @@ export const Footer = ({
             <div className='flex gap-5'>
               <PhoneIcon className='[&_path]:fill-red' />
               <ul className='flex flex-col gap-5'>
-                <li>550 000 013</li>
-                <li>574 013 013</li>
+                <li>
+                  <a href='tel:+995 550 000 013' target='_blank'>
+                    +995 550 000 013
+                  </a>
+                </li>
+                <li>
+                  <a href='tel:+995 574 013 013' target='_blank'>
+                    +995 574 013 013
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
           <div className='p-10 flex flex-col gap-5'>
             <p className='flex gap-5 items-center'>
               <EmailIcon className='[&_path]:fill-red' />
-              contact@ulcterminal.ge
+              <a href='mailto:contact@ulcterminal.ge' target='_blank'>
+                contact@ulcterminal.ge
+              </a>
             </p>
             <p className='flex gap-5 items-center'>
               <PinIcon />
