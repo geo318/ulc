@@ -27,6 +27,9 @@ header > div,
 header img {
   transition: 150ms;
 }
+* {
+  scroll-behavior: smooth;
+}
 
 .header-small > div {
   padding: 20px;

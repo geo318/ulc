@@ -11,6 +11,7 @@ import {
   Frame,
 } from '/components'
 import { Suspense } from 'react'
+import { routes } from '/config'
 
 export default async function Home({ params: { lang } }: PageProps) {
   const { home, shared } = await getDictionary(lang)
@@ -37,9 +38,12 @@ export default async function Home({ params: { lang } }: PageProps) {
           </H>
         </Section>
         <article className='grid grid-cols-2 max-w-layout mx-auto'>
-          <Section className='flex flex-col items-center justify-center bg-white aspect-2/1'>
+          <Section
+            className='flex flex-col items-center justify-center bg-white aspect-2/1'
+            id={routes.hAbout}
+          >
             <h3 className='mt-auto font-bold text-4xl mr-auto'>
-              About <span className='text-red'>Us</span>
+              ჩვენს <span className='text-red'>შესახებ</span>
             </h3>
             <p className='capitalize mb-auto mt-10 text-xl'>
               კომპანიის შექმნის იდეა დაიბადა 2021 წელს და მისი შექმნის მიზანი
@@ -59,9 +63,7 @@ export default async function Home({ params: { lang } }: PageProps) {
         />
 
         <Section className='flex flex-col items-center justify-center bg-white aspect-2/1'>
-          <h3 className='mt-auto font-bold text-4xl mr-auto'>
-            How does it <span className='text-red'>Work</span>
-          </h3>
+          <h3 className='mt-auto font-bold text-4xl mr-auto'></h3>
           <p className='capitalize mb-auto mt-10 text-xl'>
             სასაწყობო მეურნეობა გაძლევს საშუალებას დაამუშავო ყველა ტიპის და
             სირთულის როგორც საბაჟო კონტროლს დაქვემდებარებული ასევე კომერციული
@@ -69,16 +71,23 @@ export default async function Home({ params: { lang } }: PageProps) {
           </p>
         </Section>
 
-        <Section className='flex flex-col items-center justify-center bg-white aspect-2/1'>
+        <Section
+          className='flex flex-col items-center justify-center bg-white aspect-2/1'
+          id={routes.hOffer}
+        >
           <h3 className='mt-auto font-bold text-4xl mr-auto'>
-            რას <span className='text-red'>გთავაზობთ</span>
+            ჩვენ <span className='text-red'>გთავაზობთ</span>
           </h3>
-          <p className='capitalize mb-auto mt-10 text-xl'>
-            1.საბაჟო კონტროლს დაქვემდებარებული ტვირთის შენახვა წინასწარ
-            განსაზღვრული ვადით. 2.ტვირთის უსაფრთხო დამუშავება. 3.საბაჟო
-            საბროკერო მომსახურება. 4.საბაჟო დეკლარაციის შევსება. 5.კონსულტაცია
-            საბაჟო საკითხებში.
-          </p>
+          <ul className='capitalize mb-auto mt-10 text-xl list-disc ml-5'>
+            <li>
+              საბაჟო კონტროლს დაქვემდებარებული ტვირთის შენახვა წინასწარ
+              განსაზღვრული ვადით.
+            </li>
+            <li>ტვირთის უსაფრთხო დამუშავება. </li>
+            <li>საბაჟო საბროკერო მომსახურება.</li>
+            <li>საბაჟო დეკლარაციის შევსება. </li>
+            <li>კონსულტაცია საბაჟო საკითხებში.</li>
+          </ul>
         </Section>
         <Image
           src={ulc}
@@ -88,7 +97,7 @@ export default async function Home({ params: { lang } }: PageProps) {
       </article>
 
       <section className='mt-20'>
-        <Section className='my-10'>
+        <Section className='my-10' id={routes.hNews}>
           <h3 className='mt-auto font-bold text-4xl mr-auto text-red'>News</h3>
         </Section>
         <Suspense fallback={<NewsSkeleton />}>
@@ -101,7 +110,7 @@ export default async function Home({ params: { lang } }: PageProps) {
           <div />
           <Section className='flex flex-col items-center justify-center bg-white aspect-2/1'>
             <h3 className='mt-auto font-bold text-4xl mr-auto'>
-              About <span className='text-red'>Us</span>
+              რატომ <span className='text-red'>ULC</span>?
             </h3>
             <p className='capitalize mb-auto mt-10 text-xl'>
               კომპანია მომხმარებელს სთავაზობს კვალიფიციურ პერსონალზე დაფუძნებულ
@@ -114,7 +123,7 @@ export default async function Home({ params: { lang } }: PageProps) {
         <article className='grid grid-cols-2 max-w-layout mx-auto mt-auto'>
           <Section className='flex flex-col items-center justify-center bg-white aspect-2/1'>
             <h3 className='mt-auto font-bold text-4xl mr-auto'>
-              About <span className='text-red'>Us</span>
+              რატომ ჩვენთან?
             </h3>
             <p className='capitalize mb-auto mt-10 text-xl'>
               თანამედროვე ტექნიკით აღჭურვილი სასაწყობო სივრცე რომელიც

@@ -25,7 +25,7 @@ export function News({
   const { isMobile, isLoading } = useScreenWidth(1024)
   const swiperRef = useRef(null)
   return (
-    <Section className='w-max'>
+    <Section className='w-full'>
       {isLoading && children}
       {!isLoading && isMobile === false && news.length > 4 && (
         <div className='relative'>
