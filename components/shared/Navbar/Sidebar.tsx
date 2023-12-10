@@ -10,28 +10,23 @@ export const Sidebar = (props: NavbarProps) => {
   const { isOpen, toggle } = useSidebar()
   return (
     <>
-      {!isOpen ? (
-        <Burger
-          fill='#000'
-          className='self-center cursor-pointer lg:hidden'
-          onClick={toggle}
-        />
-      ) : (
-        <Close className='cursor-pointer ml-auto' onClick={toggle} />
+      <Burger
+        fill='#000'
+        className='self-center cursor-pointer lg:hidden'
+        onClick={toggle}
+      />
+
+      {isOpen && (
+        <aside className='flex flex-col fixed inset-y-0 right-0 w-72 bg-white p-5 z-50 shadow-md'>
+          <Close className='cursor-pointer ml-auto' onClick={toggle} />
+          <Nav
+            {...props}
+            toggle={toggle}
+            navItemClassName='relative flex shadow-none'
+          />
+          <Switcher className='flex gap-4 mt-10' />
+        </aside>
       )}
-      <aside
-        className={twMerge(
-          isOpen ? 'translate-y-[5rem]' : 'translate-y-full',
-          'flex flex-col fixed inset-0 bg-[#F5EFEC] p-5 z-50 shadow-md transition-transform'
-        )}
-      >
-        <Nav
-          {...props}
-          toggle={toggle}
-          navItemClassName='relative flex shadow-none'
-        />
-        <Switcher className='flex gap-4 mt-10'/>
-      </aside>
     </>
   )
 }
