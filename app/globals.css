@@ -100,20 +100,19 @@ header img {
   }
 }
 
-.fb_dialog_content:after,
-.fb-customerchat:after {
+.fb_dialog_content:after {
   content: '';
   position: fixed;
   bottom: 24px;
   right: 24px;
-  background-color: #fedb00;
+  background-color: #fff;
   height: 60px;
   width: 60px;
-  background-image: url('https://img.barambo.ge/images/chat-20231129t222230404z.svg');
+  background-image: url('./chat.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: 36px;
-  border-radius: 60px;
+  border-radius: 10px;
   box-shadow: 0 0 5px 0px rgb(0 0 0 / 20%);
   pointer-events: none;
   z-index: 9999999999;
@@ -133,4 +132,8 @@ header img {
     animation-delay: 500ms;
     translate: 0 -32px;
   }
+}
+
+.swiper {
+  padding-bottom: 50px !important;
 }

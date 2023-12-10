@@ -2,7 +2,15 @@ import Image from 'next/image'
 import { PageProps } from '/types'
 import { getDictionary } from '/lib'
 import { bg, cube, ulc } from '/public'
-import { H, Navbar, Section } from '/components'
+import {
+  H,
+  Navbar,
+  Section,
+  NewsSkeleton,
+  NewsSlider,
+  Frame,
+} from '/components'
+import { Suspense } from 'react'
 
 export default async function Home({ params: { lang } }: PageProps) {
   const { home, shared } = await getDictionary(lang)
@@ -34,10 +42,11 @@ export default async function Home({ params: { lang } }: PageProps) {
               About <span className='text-red'>Us</span>
             </h3>
             <p className='capitalize mb-auto mt-10 text-xl'>
-              Lorem ipsum dolor sit amet consectetur. Mi nisl id cursus molestie
-              dui facilisi. Turpis sit erat mus faucibus non massa diam amet. Id
-              eros purus in sit nascetur. Erat magna cras sit id imperdiet nibh
-              id. Mollis eu gravida pharetra sagittis arcu in phasellus.
+              კომპანიის შექმნის იდეა დაიბადა 2021 წელს და მისი შექმნის მიზანი
+              არის არსებულ ბაზარზე მომსახურების დონის ამაღლება, ევროპული
+              სტანდარტის დანერგვა, ერთგვარი ჰაბის შექმნა რომელიც ხელს შეუწყობს
+              საქართველოს ტერიტორიაზე საქონლის ტვირთბრუნვის გაზრდას და
+              გაამარტივებს ურთიერთობას გადამხდელსა და სახელმწიფოს შორის.
             </p>
           </Section>
         </article>
@@ -54,22 +63,21 @@ export default async function Home({ params: { lang } }: PageProps) {
             How does it <span className='text-red'>Work</span>
           </h3>
           <p className='capitalize mb-auto mt-10 text-xl'>
-            Lorem ipsum dolor sit amet consectetur. Mi nisl id cursus molestie
-            dui facilisi. Turpis sit erat mus faucibus non massa diam amet. Id
-            eros purus in sit nascetur. Erat magna cras sit id imperdiet nibh
-            id. Mollis eu gravida pharetra sagittis arcu in phasellus.
+            სასაწყობო მეურნეობა გაძლევს საშუალებას დაამუშავო ყველა ტიპის და
+            სირთულის როგორც საბაჟო კონტროლს დაქვემდებარებული ასევე კომერციული
+            დანიშნულების ტვირთები და განახორციელო ყველა სახის საბაჟო პროცედურა:
           </p>
         </Section>
 
         <Section className='flex flex-col items-center justify-center bg-white aspect-2/1'>
           <h3 className='mt-auto font-bold text-4xl mr-auto'>
-            How does it <span className='text-red'>Work</span>
+            რას <span className='text-red'>გთავაზობთ</span>
           </h3>
           <p className='capitalize mb-auto mt-10 text-xl'>
-            Lorem ipsum dolor sit amet consectetur. Mi nisl id cursus molestie
-            dui facilisi. Turpis sit erat mus faucibus non massa diam amet. Id
-            eros purus in sit nascetur. Erat magna cras sit id imperdiet nibh
-            id. Mollis eu gravida pharetra sagittis arcu in phasellus.
+            1.საბაჟო კონტროლს დაქვემდებარებული ტვირთის შენახვა წინასწარ
+            განსაზღვრული ვადით. 2.ტვირთის უსაფრთხო დამუშავება. 3.საბაჟო
+            საბროკერო მომსახურება. 4.საბაჟო დეკლარაციის შევსება. 5.კონსულტაცია
+            საბაჟო საკითხებში.
           </p>
         </Section>
         <Image
@@ -79,9 +87,44 @@ export default async function Home({ params: { lang } }: PageProps) {
         />
       </article>
 
-      <Section>
-        Cert
-      </Section>
+      <section className='mt-20'>
+        <Section className='my-10'>
+          <h3 className='mt-auto font-bold text-4xl mr-auto text-red'>News</h3>
+        </Section>
+        <Suspense fallback={<NewsSkeleton />}>
+          <NewsSlider lang={lang} />
+        </Suspense>
+      </section>
+      <section className='my-20 h-[100vw] relative flex flex-col'>
+        <Frame className='w-full absolute inset-0 h-full' />
+        <article className='grid grid-cols-2 max-w-layout mx-auto'>
+          <div />
+          <Section className='flex flex-col items-center justify-center bg-white aspect-2/1'>
+            <h3 className='mt-auto font-bold text-4xl mr-auto'>
+              About <span className='text-red'>Us</span>
+            </h3>
+            <p className='capitalize mb-auto mt-10 text-xl'>
+              კომპანია მომხმარებელს სთავაზობს კვალიფიციურ პერსონალზე დაფუძნებულ
+              გადაწყვეტილებებს, რაც პირდაპირპროპორციულად ხელს უწყობს ჩვენი
+              მომხმარებლის ხარჯების შემცირებას და ანიჭებს უპირატესობას
+              კონკურენტულ ბაზარზე;
+            </p>
+          </Section>
+        </article>
+        <article className='grid grid-cols-2 max-w-layout mx-auto mt-auto'>
+          <Section className='flex flex-col items-center justify-center bg-white aspect-2/1'>
+            <h3 className='mt-auto font-bold text-4xl mr-auto'>
+              About <span className='text-red'>Us</span>
+            </h3>
+            <p className='capitalize mb-auto mt-10 text-xl'>
+              თანამედროვე ტექნიკით აღჭურვილი სასაწყობო სივრცე რომელიც
+              უზრუნველყოფს ტვირთმფლობელის საქონლის უსაფრთხო დამუშავებას და ხელს
+              შეუწყობს ყოველგვარი დაბრკოლებების გარეშე ტვირთის დანიშნულების
+              ადგილამდე დროულ მიწოდებას;
+            </p>
+          </Section>
+        </article>
+      </section>
     </main>
   )
 }

@@ -1,32 +1,33 @@
 'use client'
 
-import { H, Section, Spinner } from '/components'
-import { Certificate } from '/types'
+import { Section } from '/components'
+import { Locale, News } from '/types'
 import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
 import { SlideArrow } from './Arrows'
 import { useRef, useState } from 'react'
 import { useScreenWidth } from '/hooks'
 import { Slide } from './Slide'
+import { getLangKey } from '/utils'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
-export function Cert({ text }: { text: Certificate }) {
+export function News({
+  news,
+  lang,
+  children,
+}: {
+  news: News[]
+  lang: Locale
+  children?: React.ReactNode
+}) {
   const [swiper, setSwiper] = useState<SwiperClass | null>(null)
   const { isMobile, isLoading } = useScreenWidth(1024)
   const swiperRef = useRef(null)
-
   return (
-    <Section>
-      <H tag='h2' size='md' className='lg:mb-16 mb-4'>
-        {text.h2}
-      </H>
-      {isLoading && (
-        <div className='w-full flex items-center justify-center'>
-          <Spinner />
-        </div>
-      )}
-      {isMobile === false && (
+    <Section className='w-max'>
+      {isLoading && children}
+      {!isLoading && isMobile === false && news.length > 4 && (
         <div className='relative'>
           <SlideArrow
             dir='left'
@@ -38,23 +39,28 @@ export function Cert({ text }: { text: Certificate }) {
             modules={[Navigation]}
             onSwiper={(swiperRef) => setSwiper(swiperRef)}
             spaceBetween={50}
-            slidesPerView={3}
+            slidesPerView={4}
             navigation={true}
             ref={swiperRef}
             loop
           >
-            {text.list.map(({ description, title }, index) => {
-              const num = Math.floor(index / 3)
-              const i = index + 1 - num * 3
-              return (
-                <SwiperSlide
-                  key={index}
-                  className='border-2 border-[#ddd] rounded-3xl p-[1.6vw] !h-auto'
-                >
-                  <Slide i={i} description={description} title={title} />
-                </SwiperSlide>
-              )
-            })}
+            {news
+              ?.slice()
+              .reverse()
+              .map((news, index) => {
+                return (
+                  <SwiperSlide
+                    key={index}
+                    className='shadow-xl rounded-3xl overflow-hidden !h-auto'
+                  >
+                    <Slide
+                      description={news[`content_${getLangKey(lang)}`]}
+                      title={news[`title_${getLangKey(lang)}`]}
+                      path={news.thumbnail}
+                    />
+                  </SwiperSlide>
+                )
+              })}
           </Swiper>
 
           <SlideArrow
@@ -64,17 +70,19 @@ export function Cert({ text }: { text: Certificate }) {
           />
         </div>
       )}
-      {isMobile === true && (
+      {!isLoading && (isMobile === true || news.length < 5) && (
         <div className='flex flex-nowrap snap-mandatory overflow-x-auto gap-6 pb-3'>
-          {text.list.map(({ description, title }, index) => {
-            const num = Math.floor(index / 3)
-            const i = index + 1 - num * 3
+          {news?.map((news, index) => {
             return (
               <div
                 key={index}
-                className='border-2 border-[#ddd] rounded-3xl py-3 px-5 min-w-[15rem]'
+                className='border-2 overflow-hidden rounded-3xl min-w-[15rem]'
               >
-                <Slide i={i} description={description} title={title} />
+                <Slide
+                  description={news[`content_${getLangKey(lang)}`]}
+                  title={news[`title_${getLangKey(lang)}`]}
+                  path={news.thumbnail}
+                />
               </div>
             )
           })}

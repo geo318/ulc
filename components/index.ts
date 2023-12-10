@@ -1,4 +1,4 @@
 export * from './icons'
 export * from './shared'
-export * from './CertSlider'
+export * from './NewsSlider'
 export * from './admin'

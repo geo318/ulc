@@ -1,4 +1,4 @@
-export * from './avatar'
+export * from './globe'
 export * from './email'
 export * from './fax'
 export * from './phone'

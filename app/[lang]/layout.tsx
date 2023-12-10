@@ -2,12 +2,11 @@ import type { Metadata } from 'next'
 import { FbChat, Footer, Navbar } from '/components'
 import { Locale } from '/types'
 import { getDictionary } from '/lib'
-import { locales, routes } from '/config'
-import { headers } from 'next/headers'
+import { locales } from '/config'
 import '../globals.css'
 
 export const metadata: Metadata = {
-  title: 'Barambo',
+  title: 'ULC Terminal',
   description: 'Chocolates and sweets manufacturer',
 }
 

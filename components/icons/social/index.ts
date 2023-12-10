@@ -1,4 +1,4 @@
 export * from './Fb'
-export * from './Tw'
+export * from './Ig'
 export * from './In'
 export * from './Yt'
