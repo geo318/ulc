@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef } from 'react'
 
-export const useClickOutSide = <T extends HTMLElement>({
+export const useClickOutSide = <T extends Element>({
   cb,
 }: {
   cb: () => void
