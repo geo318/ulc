@@ -44,14 +44,11 @@ export default async function Home({ params: { lang } }: PageProps) {
             id={routes.hAbout}
           >
             <h3 className='mt-auto font-bold text-4xl mr-auto'>
-              ჩვენს <span className='text-red'>შესახებ</span>
+              {home.about['title-p1']}{' '}
+              <span className='text-red'>{home.about['title-p2']}</span>
             </h3>
             <p className='capitalize mb-auto mt-10 text-xl'>
-              კომპანიის შექმნის იდეა დაიბადა 2021 წელს და მისი შექმნის მიზანი
-              არის არსებულ ბაზარზე მომსახურების დონის ამაღლება, ევროპული
-              სტანდარტის დანერგვა, ერთგვარი ჰაბის შექმნა რომელიც ხელს შეუწყობს
-              საქართველოს ტერიტორიაზე საქონლის ტვირთბრუნვის გაზრდას და
-              გაამარტივებს ურთიერთობას გადამხდელსა და სახელმწიფოს შორის.
+              {home.about.text}
             </p>
           </Section>
         </article>
@@ -66,9 +63,7 @@ export default async function Home({ params: { lang } }: PageProps) {
         <Section className='flex flex-col items-center justify-center bg-white aspect-2/1'>
           <h3 className='mt-auto font-bold text-4xl mr-auto'></h3>
           <p className='capitalize mb-auto mt-10 text-xl'>
-            სასაწყობო მეურნეობა გაძლევს საშუალებას დაამუშავო ყველა ტიპის და
-            სირთულის როგორც საბაჟო კონტროლს დაქვემდებარებული ასევე კომერციული
-            დანიშნულების ტვირთები და განახორციელო ყველა სახის საბაჟო პროცედურა:
+            {home['offer-p1'].text}
           </p>
         </Section>
 
@@ -77,17 +72,13 @@ export default async function Home({ params: { lang } }: PageProps) {
           id={routes.hOffer}
         >
           <h3 className='mt-auto font-bold text-4xl mr-auto'>
-            ჩვენ <span className='text-red'>გთავაზობთ</span>
+            {home['offer-p2']['title-p1']}{' '}
+            <span className='text-red'>{home['offer-p2']['title-p2']}</span>
           </h3>
           <ul className='capitalize mb-auto mt-10 text-xl list-disc ml-5'>
-            <li>
-              საბაჟო კონტროლს დაქვემდებარებული ტვირთის შენახვა წინასწარ
-              განსაზღვრული ვადით.
-            </li>
-            <li>ტვირთის უსაფრთხო დამუშავება. </li>
-            <li>საბაჟო საბროკერო მომსახურება.</li>
-            <li>საბაჟო დეკლარაციის შევსება. </li>
-            <li>კონსულტაცია საბაჟო საკითხებში.</li>
+            {home['offer-p2'].li.map((text, index) => (
+              <li key={index}>{text}</li>
+            ))}
           </ul>
         </Section>
         <Image
@@ -99,7 +90,9 @@ export default async function Home({ params: { lang } }: PageProps) {
 
       <section className='mt-20'>
         <Section className='my-10' id={routes.hNews}>
-          <h3 className='mt-auto font-bold text-4xl mr-auto text-red'>News</h3>
+          <h3 className='mt-auto font-bold text-4xl mr-auto text-red'>
+            {home.news}
+          </h3>
         </Section>
         <Suspense fallback={<NewsSkeleton />}>
           <NewsSlider lang={lang} />
@@ -111,26 +104,21 @@ export default async function Home({ params: { lang } }: PageProps) {
           <div />
           <Section className='flex flex-col items-center justify-center bg-white aspect-2/1'>
             <h3 className='mt-auto font-bold text-4xl mr-auto'>
-              რატომ <span className='text-red'>ULC</span>?
+              {home['why-ulc']['title-p1']}{' '}
+              <span className='text-red'>{home['why-ulc']['title-p2']}</span>?
             </h3>
             <p className='capitalize mb-auto mt-10 text-xl'>
-              კომპანია მომხმარებელს სთავაზობს კვალიფიციურ პერსონალზე დაფუძნებულ
-              გადაწყვეტილებებს, რაც პირდაპირპროპორციულად ხელს უწყობს ჩვენი
-              მომხმარებლის ხარჯების შემცირებას და ანიჭებს უპირატესობას
-              კონკურენტულ ბაზარზე;
+              {home['why-ulc'].text}
             </p>
           </Section>
         </article>
         <article className='grid grid-cols-2 max-w-layout mx-auto mt-auto'>
           <Section className='flex flex-col items-center justify-center bg-white aspect-2/1'>
             <h3 className='mt-auto font-bold text-4xl mr-auto'>
-              რატომ ჩვენთან?
+              {home['why-us']['title-p1']} {home['why-us']['title-p2']}?
             </h3>
             <p className='capitalize mb-auto mt-10 text-xl'>
-              თანამედროვე ტექნიკით აღჭურვილი სასაწყობო სივრცე რომელიც
-              უზრუნველყოფს ტვირთმფლობელის საქონლის უსაფრთხო დამუშავებას და ხელს
-              შეუწყობს ყოველგვარი დაბრკოლებების გარეშე ტვირთის დანიშნულების
-              ადგილამდე დროულ მიწოდებას;
+              {home['why-us'].text}
             </p>
           </Section>
         </article>
