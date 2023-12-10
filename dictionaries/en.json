@@ -1,8 +1,39 @@
 {
-  "home": {},
+  "home": {
+    "about": {
+      "title-p1": "About",
+      "title-p2": "Us",
+      "text": "The idea of creating the company was born in 2021. The purpose of its creation is to raise the level of service in the existing market, to introduce the European standard, to create a hub that will help increase the turnover of goods in the territory of Georgia and simplify the relationship between the payer and the state."
+    },
+    "offer-p1": {
+      "title": null,
+      "text": "Warehousing allows one to handle all types of complex, both customs-controlled and commercial cargo, and carry out all types of customs procedures:"
+    },
+    "offer-p2": {
+      "title-p1": "We",
+      "title-p2": "Offer",
+      "li": [
+        "Storage of a cargo for a predetermined period, subject to customs control.",
+        "Safe cargo handling.",
+        "Customs brokerage services.",
+        "Filling out of the customs declaration.",
+        "Consultation in customs matters."
+      ]
+    },
+    "news": "News",
+    "why-ulc": {
+      "title-p1": "Why",
+      "title-p2": "ULC",
+      "text": "The company offers customers solutions based on qualified personnel, which directly contributes to reducing our customer's costs and gives an advantage in the competitive market."
+    },
+    "why-us": {
+      "title-p1": "Why",
+      "title-p2": "Us",
+      "text": "Warehouse space equipped with modern equipment, that ensures safe handling of the cargo owner's goods and will facilitate timely delivery of the cargo to the destination without any obstacles."
+    }
+  },
   "shared": {
     "header": {
-      "home": "Home",
       "home-news": "News",
       "home-about": "About",
       "home-contact": "Contact",

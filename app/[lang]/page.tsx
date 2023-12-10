@@ -24,6 +24,7 @@ export default async function Home({ params: { lang } }: PageProps) {
             src={bg}
             alt='main background banner'
             className='object-cover h-full w-full'
+            priority
           />
         </div>
         <Navbar lang={lang} text={shared.header} />
