@@ -23,8 +23,9 @@ export const Sidebar = (props: NavbarProps) => {
             {...props}
             toggle={toggle}
             navItemClassName='relative flex shadow-none'
+            className='mt-10 flex-col'
           />
-          <Switcher className='flex gap-4 mt-10' />
+          <Switcher className='flex gap-4 mt-10 mr-auto' />
         </aside>
       )}
     </>

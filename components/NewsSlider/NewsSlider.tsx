@@ -16,7 +16,7 @@ export async function NewsSlider({ lang }: { lang: Locale }) {
 }
 
 export const NewsSkeleton = () => (
-  <Section className='w-full'>
+  <Section className='w-full max-w-full overflow-x-auto'>
     <H tag='h2' size='md' className='lg:mb-16 mb-4'>
       <div className='animate-pulse w-1/3 h-14 bg-zinc-200  rounded-md' />
     </H>

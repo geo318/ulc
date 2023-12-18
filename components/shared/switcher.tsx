@@ -5,7 +5,7 @@ import { localeInfo } from '/config'
 import { useParams, usePathname } from 'next/navigation'
 import { twMerge } from 'tailwind-merge'
 import { Globe } from '/components'
-import { useClickOutSide } from '/hooks'
+import { useClickOutSide, useScreenWidth } from '/hooks'
 import { useState } from 'react'
 import { Locale } from '/types'
 
@@ -13,6 +13,7 @@ export function Switcher({ className = '' }) {
   const pathname = usePathname()
   const lang = useParams().lang as Locale
   const [isOpened, setIsOpened] = useState(false)
+  const { isMobile } = useScreenWidth(1024)
   const ref = useClickOutSide<HTMLDivElement>({
     cb: setIsOpened.bind(null, false),
   })
@@ -24,16 +25,16 @@ export function Switcher({ className = '' }) {
         className
       )}
     >
-      <Globe className='[&_path]:fill-red' />
+      <Globe className='[&_path]:fill-red lg:flex hidden' />
       <div
         ref={ref}
         onClick={setIsOpened.bind(null, (prev) => !prev)}
-        className='cursor-pointer rounded-lg bg-white px-2'
+        className='cursor-pointer rounded-lg bg-white px-2 lg:text-black text-red'
       >
         {lang}
       </div>
       <div className='relative'>
-        {isOpened && (
+        {(isOpened || isMobile) && (
           <div className='absolute bg-white top-5 -right-5 rounded-md w-24 flex flex-col items-center justify-center gap-1 py-3'>
             {localeInfo
               ?.filter((l) => l.key !== lang)

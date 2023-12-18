@@ -13,12 +13,12 @@ export const Footer = ({
   lang: (typeof locales)[number]
 }) => {
   return (
-    <footer className='relative bg-app-blue-dark flex flex-col overflow-hidden lg:bg-transparent bg-[#E7DAD2] lg:pt-0 pt-8 lg:rounded-none rounded-t-3xl font-medium'>
+    <footer className='relative bg-app-blue-dark flex flex-col overflow-hidden lg:bg-transparent lg:pt-0 pt-8 lg:rounded-none rounded-t-3xl font-medium'>
       <Section id={routes.hContact}>
-        <section className='grid grid-cols-2 divide-x divide-black mt-32 rounded-lg overflow-hidden bg-white bg-opacity-80 py-5'>
-          <div className='p-10 flex flex-col gap-5'>
+        <section className='grid lg:gap-0 gap-2 lg:grid-cols-2 divide-x divide-black lg:mt-32 mt-10 rounded-lg overflow-hidden bg-white bg-opacity-80 py-5'>
+          <div className='lg:p-10 p-5 flex flex-col gap-5'>
             <div className='flex gap-5'>
-              <PhoneIcon className='[&_path]:fill-red' />
+              <PhoneIcon className='[&_path]:fill-red shrink-0' />
               <ul className='flex flex-col gap-5'>
                 <li>
                   <a href='tel:+995 550 000 013' target='_blank'>
@@ -33,15 +33,15 @@ export const Footer = ({
               </ul>
             </div>
           </div>
-          <div className='p-10 flex flex-col gap-5'>
+          <div className='lg:p-10 p-5 flex flex-col gap-5'>
             <p className='flex gap-5 items-center'>
-              <EmailIcon className='[&_path]:fill-red' />
+              <EmailIcon className='[&_path]:fill-red shrink-0' />
               <a href='mailto:contact@ulcterminal.ge' target='_blank'>
                 contact@ulcterminal.ge
               </a>
             </p>
             <p className='flex gap-5 items-center'>
-              <PinIcon />
+              <PinIcon className='shrink-0'/>
               Gardabani. Martyofi, Mon-Fri: 9:00 - 21:00
             </p>
           </div>
@@ -52,7 +52,7 @@ export const Footer = ({
         alt='footer background'
         className='object-cover object-left-top -z-10 absolute w-full h-full'
       />
-      <Section className='mt-auto max-w-[100rem] mx-auto flex flex-col-reverse pb-10 pt-32 md:px-14'>
+      <Section className='mt-auto max-w-[100rem] mx-auto flex flex-col-reverse lg:pb-10 lg:pt-32 md:px-14'>
         <section className='xl:col-span-1 text-center flex items-center mt-10 lg:mt-0 ml-auto w-full px-10'>
           <div className='flex flex-col mr-auto lg:ml-0 ml-auto lg:gap-7 gap-2'>
             <Social />

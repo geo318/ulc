@@ -33,31 +33,31 @@ export default async function Home({ params: { lang } }: PageProps) {
           <H
             tag='h1'
             size='max'
-            className='text-white capitalize mt-[10%] mb-[15%] leading-[1.1] txt-balanced'
+            className='text-white capitalize lg:mt-[10%] my-32 lg:mb-[15%] lg:leading-[1.1] leading-normal txt-balanced'
           >
             shipping has never been so easy
           </H>
         </Section>
-        <article className='grid grid-cols-2 max-w-layout mx-auto'>
+        <article className='grid lg:grid-cols-2 max-w-layout mx-auto'>
           <Section
-            className='flex flex-col items-center justify-center bg-white aspect-2/1'
+            className='flex flex-col items-center justify-center bg-white aspect-2/1 py-8'
             id={routes.hAbout}
           >
             <h3 className='mt-auto font-bold text-4xl mr-auto'>
               {home.about['title-p1']}{' '}
               <span className='text-red'>{home.about['title-p2']}</span>
             </h3>
-            <p className='capitalize mb-auto mt-10 text-xl'>
+            <p className='capitalize mb-auto mt-10 lg:text-xl text-base'>
               {home.about.text}
             </p>
           </Section>
         </article>
       </div>
-      <article className='grid grid-cols-2 max-w-layout mx-auto'>
+      <article className='lg:grid grid-cols-2 max-w-layout mx-auto'>
         <Image
           src={cube}
           alt='ulc cube'
-          className='aspect-2/1 object-cover h-full'
+          className='lg:aspect-2/1 aspect-square object-cover h-full'
         />
 
         <Section className='flex flex-col items-center justify-center bg-white aspect-2/1'>
@@ -68,14 +68,14 @@ export default async function Home({ params: { lang } }: PageProps) {
         </Section>
 
         <Section
-          className='flex flex-col items-center justify-center bg-white aspect-2/1'
+          className='flex flex-col items-center justify-center bg-white aspect-2/1 mt-10'
           id={routes.hOffer}
         >
           <h3 className='mt-auto font-bold text-4xl mr-auto'>
             {home['offer-p2']['title-p1']}{' '}
             <span className='text-red'>{home['offer-p2']['title-p2']}</span>
           </h3>
-          <ul className='capitalize mb-auto mt-10 text-xl list-disc ml-5'>
+          <ul className='capitalize mb-auto mt-10 lg:text-xl text-base list-disc ml-5'>
             {home['offer-p2'].li.map((text, index) => (
               <li key={index}>{text}</li>
             ))}
@@ -84,11 +84,11 @@ export default async function Home({ params: { lang } }: PageProps) {
         <Image
           src={ulc}
           alt='ulc cube'
-          className='aspect-video object-cover h-full'
+          className='object-cover h-full mt-10'
         />
       </article>
 
-      <section className='mt-20'>
+      <section className='lg:mt-20 mt-10'>
         <Section className='my-10' id={routes.hNews}>
           <h3 className='mt-auto font-bold text-4xl mr-auto text-red'>
             {home.news}
@@ -100,24 +100,24 @@ export default async function Home({ params: { lang } }: PageProps) {
       </section>
       <section className='my-20 h-[100vw] relative flex flex-col'>
         <Frame className='w-full absolute inset-0 h-full' />
-        <article className='grid grid-cols-2 max-w-layout mx-auto'>
+        <article className='grid lg:grid-cols-2 max-w-layout mx-auto lg:mt-0 mt-20'>
           <div />
           <Section className='flex flex-col items-center justify-center bg-white aspect-2/1'>
             <h3 className='mt-auto font-bold text-4xl mr-auto'>
               {home['why-ulc']['title-p1']}{' '}
               <span className='text-red'>{home['why-ulc']['title-p2']}</span>?
             </h3>
-            <p className='capitalize mb-auto mt-10 text-xl'>
+            <p className='capitalize mb-auto mt-10 lg:text-xl'>
               {home['why-ulc'].text}
             </p>
           </Section>
         </article>
-        <article className='grid grid-cols-2 max-w-layout mx-auto mt-auto'>
+        <article className='lg:grid lg:grid-cols-2 max-w-layout mx-auto lg:mt-auto mt-10 lg:mb-0 pb-10 hidden'>
           <Section className='flex flex-col items-center justify-center bg-white aspect-2/1'>
             <h3 className='mt-auto font-bold text-4xl mr-auto'>
               {home['why-us']['title-p1']} {home['why-us']['title-p2']}?
             </h3>
-            <p className='capitalize mb-auto mt-10 text-xl'>
+            <p className='capitalize mb-auto mt-10 lg:text-xl'>
               {home['why-us'].text}
             </p>
           </Section>

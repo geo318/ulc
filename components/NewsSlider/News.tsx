@@ -32,14 +32,14 @@ export function News({
           <SlideArrow
             dir='left'
             swiper={swiper}
-            className='-ml-10 top-1/2 -translate-y-1/2 absolute'
+            className='-ml-10 top-1/2 -translate-y-1/2 absolute lg:block hidden'
           />
 
           <Swiper
             modules={[Navigation]}
             onSwiper={(swiperRef) => setSwiper(swiperRef)}
-            spaceBetween={50}
-            slidesPerView={4}
+            spaceBetween={isMobile ? 0 : 50}
+            slidesPerView={isMobile ? 1 : 4}
             navigation={true}
             ref={swiperRef}
             loop
@@ -66,7 +66,7 @@ export function News({
           <SlideArrow
             dir='right'
             swiper={swiper}
-            className='-mr-10 right-0 top-1/2 -translate-y-1/2 absolute swiper-button-next'
+            className='-mr-10 right-0 top-1/2 -translate-y-1/2 absolute swiper-button-next lg:block hidden'
           />
         </div>
       )}
@@ -76,7 +76,7 @@ export function News({
             return (
               <div
                 key={index}
-                className='border-2 overflow-hidden rounded-3xl min-w-[15rem]'
+                className='border-2 overflow-hidden rounded-3xl w-full max-w-[25%]'
               >
                 <Slide
                   description={news[`content_${getLangKey(lang)}`]}

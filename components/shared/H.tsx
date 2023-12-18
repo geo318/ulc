@@ -12,7 +12,7 @@ const variants = {
   xl: '[font-size:_clamp(2rem,3vw,4.5rem)]',
   '2xl': '[font-size:_clamp(2.25rem,3.25vw,5rem)]',
   '3xl': '[font-size:_clamp(3rem,4vw,6rem)]',
-  max: '[font-size:_clamp(4.5rem,9vw,9rem)]',
+  max: 'lg:[font-size:_clamp(4.5rem,9vw,9rem)] text-4xl',
 } as const
 
 export const H: React.FC<CustomHeading & { size: keyof typeof variants }> = ({
@@ -22,7 +22,7 @@ export const H: React.FC<CustomHeading & { size: keyof typeof variants }> = ({
 }) =>
   createElement(tag, {
     ...props,
-    className: twMerge(props.className, font.className, size && variants[size]),
+    className: twMerge(font.className, size && variants[size], props.className),
     style: {
       ...props.style,
       ...(size.includes('xl') && { fontWeight: 700 }),
