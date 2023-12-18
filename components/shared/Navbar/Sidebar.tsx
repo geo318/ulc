@@ -17,16 +17,21 @@ export const Sidebar = (props: NavbarProps) => {
       />
 
       {isOpen && (
-        <aside className='flex flex-col fixed inset-y-0 right-0 w-72 bg-white p-5 z-50 shadow-md'>
-          <Close className='cursor-pointer ml-auto' onClick={toggle} />
-          <Nav
-            {...props}
-            toggle={toggle}
-            navItemClassName='relative flex shadow-none'
-            className='mt-10 flex-col'
+        <>
+          <div
+            className='fixed inset-0 bg-black opacity-50 z-40 lg:hidden'
           />
-          <Switcher className='flex gap-4 mt-10 mr-auto' />
-        </aside>
+          <aside className='flex flex-col fixed inset-y-0 right-0 w-72 bg-white p-5 z-50 shadow-md'>
+            <Close className='cursor-pointer ml-auto' onClick={toggle} />
+            <Nav
+              {...props}
+              toggle={toggle}
+              navItemClassName='relative flex shadow-none'
+              className='mt-10 flex-col'
+            />
+            <Switcher className='flex gap-4 mt-10 mr-auto' />
+          </aside>
+        </>
       )}
     </>
   )

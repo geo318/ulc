@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { localeInfo } from '/config'
+import { localeInfo, locales } from '/config'
 import { useParams, usePathname } from 'next/navigation'
 import { twMerge } from 'tailwind-merge'
 import { Globe } from '/components'
@@ -28,13 +28,30 @@ export function Switcher({ className = '' }) {
       <Globe className='[&_path]:fill-red lg:flex hidden' />
       <div
         ref={ref}
-        onClick={setIsOpened.bind(null, (prev) => !prev)}
-        className='cursor-pointer rounded-lg bg-white px-2 lg:text-black text-red'
+        onClick={() => setIsOpened((prev) => !prev)}
+        className='cursor-pointer rounded-lg bg-white px-2 lg:text-black text-red lg:block hidden'
       >
         {lang}
       </div>
       <div className='relative'>
-        {(isOpened || isMobile) && (
+        {isMobile &&
+          localeInfo.map((locale) => (
+            <li
+              key={locale.key}
+              className={twMerge(
+                'border-y border-transparent lg:hidden block',
+                pathname.startsWith(`/${locale.key}`) && 'text-red'
+              )}
+            >
+              <Link
+                href={pathname.replace(/^\/(en|ka|ru)/, `/${locale.key}`)}
+                className='hover:opacity-80 transition-opacity duration-200 uppercase'
+              >
+                {locale.name}
+              </Link>
+            </li>
+          ))}
+        {isOpened && (
           <div className='absolute bg-white top-5 -right-5 rounded-md w-24 flex flex-col items-center justify-center gap-1 py-3'>
             {localeInfo
               ?.filter((l) => l.key !== lang)
