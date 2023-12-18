@@ -39,12 +39,12 @@ export default async function Discovery() {
                   .map((h) => (
                     <div
                       key={h.id}
-                      className='flex flex-col gap-3 border border-slate-400 rounded-lg hover:shadow-lg p-5 divide-y-2 divide-solid'
+                      className='truncate flex flex-col gap-3 border border-slate-400 rounded-lg hover:shadow-lg p-5 divide-y-2 divide-solid'
                     >
                       {h.title_eng}
                       <Image
                         src={getImage`${h.thumbnail}`}
-                        className='object-cover w-full h-full aspect-square'
+                        className='truncate object-cover w-full h-full aspect-square'
                         width={100}
                         height={100}
                         alt=''
