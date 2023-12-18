@@ -81,21 +81,17 @@ export default async function Home({ params: { lang } }: PageProps) {
             ))}
           </ul>
         </Section>
-        <Image
-          src={ulc}
-          alt='ulc cube'
-          className='object-cover h-full mt-10'
-        />
+        <Image src={ulc} alt='ulc cube' className='object-cover h-full mt-10' />
       </article>
 
       <section className='lg:mt-20 mt-10'>
         <Section className='my-10' id={routes.hNews}>
           <h3 className='mt-auto font-bold text-4xl mr-auto text-red'>
-            {home.news}
+            {home.news.title}
           </h3>
         </Section>
         <Suspense fallback={<NewsSkeleton />}>
-          <NewsSlider lang={lang} />
+          <NewsSlider lang={lang} action={home.news.action} />
         </Suspense>
       </section>
       <section className='my-20 h-[100vw] relative flex flex-col'>

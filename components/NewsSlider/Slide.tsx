@@ -1,8 +1,15 @@
 import Image from 'next/image'
 import { H } from '/components'
 import { getImage } from '/utils'
+import Link from 'next/link'
 
-export const Slide = ({ title = '', description = '', path = '' }) => (
+export const Slide = ({
+  title,
+  description,
+  path,
+  link,
+  action,
+}: Record<string, string>) => (
   <div className='flex flex-col'>
     <Image
       src={getImage`${path}`}
@@ -26,6 +33,11 @@ export const Slide = ({ title = '', description = '', path = '' }) => (
       >
         {description}
       </p>
+      {action && (
+        <Link className='text-sx hover:underline text-blue-500' href={link}>
+          {action}
+        </Link>
+      )}
     </div>
   </div>
 )

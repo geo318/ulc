@@ -5,11 +5,17 @@ import { News } from './News'
 import { getNews } from '/server'
 import { Locale } from '/types'
 
-export async function NewsSlider({ lang }: { lang: Locale }) {
+export async function NewsSlider({
+  lang,
+  action,
+}: {
+  lang: Locale
+  action: string
+}) {
   const certificates = await getNews()
 
   return (
-    <News news={certificates} lang={lang}>
+    <News news={certificates} lang={lang} action={action}>
       <NewsSkeleton />
     </News>
   )

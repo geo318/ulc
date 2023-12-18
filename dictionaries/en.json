@@ -20,7 +20,7 @@
         "Consultation in customs matters."
       ]
     },
-    "news": "News",
+    "news": { "title": "News", "action": "Read more" },
     "why-ulc": {
       "title-p1": "Why",
       "title-p2": "ULC",

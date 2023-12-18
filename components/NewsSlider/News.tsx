@@ -16,10 +16,12 @@ export function News({
   news,
   lang,
   children,
+  action,
 }: {
   news: News[]
   lang: Locale
   children?: React.ReactNode
+  action: string
 }) {
   const [swiper, setSwiper] = useState<SwiperClass | null>(null)
   const { isMobile, isLoading } = useScreenWidth(1024)
@@ -82,6 +84,8 @@ export function News({
                   description={news[`content_${getLangKey(lang)}`]}
                   title={news[`title_${getLangKey(lang)}`]}
                   path={news.thumbnail}
+                  link={news.link ?? ''}
+                  action={action}
                 />
               </div>
             )

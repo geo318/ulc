@@ -9,4 +9,5 @@ export const news = sqliteTable('news', {
   content_geo: text('content_geo').notNull(),
   content_rus: text('content_rus').notNull(),
   thumbnail: text('thumbnail').notNull(),
+  link: text('link'),
 })

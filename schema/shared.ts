@@ -43,4 +43,5 @@ export const newsSchema = (optional?: boolean) =>
     content_geo: z.string().min(3).max(800),
     content_rus: z.string().min(3).max(800),
     thumbnail: optional ? z.string().or(imgSchema) : imgSchema,
+    link: z.string().url(),
   })

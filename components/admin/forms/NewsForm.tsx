@@ -34,6 +34,7 @@ export const NewsForm = ({
         <Input name='content_geo' label='Description geo' />
         <Input name='content_rus' label='Description rus' />
         <Input name='thumbnail' label='Thumbnail image' type='file' />
+        <Input name='link' label='Link' />
       </FormWrapper>
       {param && deleteAction && (
         <form action={handleDelete}>
