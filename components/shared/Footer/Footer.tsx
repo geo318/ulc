@@ -27,7 +27,7 @@ export const Footer = ({
           animationEnd={['translate-y-0']}
         >
           <section className='grid lg:gap-0 gap-2 lg:grid-cols-2 divide-x divide-black lg:mt-32 mt-10 rounded-lg overflow-hidden bg-white bg-opacity-80 py-5'>
-            <div className='lg:p-10 p-5 flex flex-col gap-5'>
+            <div className='lg:p-10 p-5 lg:pb-10 pb-0 flex flex-col gap-5'>
               <div className='flex gap-5'>
                 <PhoneIcon className='[&_path]:fill-red shrink-0' />
                 <ul className='flex flex-col gap-5'>
@@ -66,7 +66,7 @@ export const Footer = ({
       />
       <Section className='mt-auto max-w-[100rem] mx-auto flex flex-col-reverse lg:pb-10 lg:pt-32 md:px-14'>
         <section className='xl:col-span-1 text-center flex items-center mt-10 lg:mt-0 ml-auto w-full px-10'>
-          <div className='flex flex-col mr-auto lg:ml-0 ml-auto lg:gap-7 gap-2'>
+          <div className='flex flex-col mr-auto lg:gap-7 gap-2'>
             <Social />
           </div>
           <Logo className='lg:max-w-[11rem] max-w-[6rem] ml-auto [&_path]:fill-white [&_path:last-child]:fill-black' />
