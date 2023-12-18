@@ -47,6 +47,10 @@ header img {
   animation: fade-in 500ms forwards ease-in;
 }
 
+.glow {
+  filter: drop-shadow(2px 2px 5px rgb(255 255 255 / 0.8));
+}
+
 .move-up {
   animation: move-up 500ms forwards ease-in;
 }
