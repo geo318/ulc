@@ -33,8 +33,12 @@ export const Slide = ({
       >
         {description}
       </p>
-      {action && (
-        <Link className='text-sx hover:underline text-blue-500' href={link}>
+      {link && (
+        <Link
+          className='text-xs hover:underline text-blue-500'
+          href={link}
+          target='_blank'
+        >
           {action}
         </Link>
       )}

@@ -59,6 +59,8 @@ export function News({
                       description={news[`content_${getLangKey(lang)}`]}
                       title={news[`title_${getLangKey(lang)}`]}
                       path={news.thumbnail}
+                      link={news.link ?? ''}
+                      action={action}
                     />
                   </SwiperSlide>
                 )
