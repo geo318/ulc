@@ -56,45 +56,46 @@ export default async function Home({ params: { lang } }: PageProps) {
           </Section>
         </article>
       </div>
-      <Anima>
-        <article className='lg:grid grid-cols-2 max-w-layout mx-auto'>
-          <Image
-            src={cube}
-            alt='ulc cube'
-            className='lg:aspect-2/1 aspect-square object-cover h-full'
-          />
-          <Section className='flex flex-col items-center justify-center bg-white aspect-2/1'>
+
+      <article className='lg:grid grid-cols-2 max-w-layout mx-auto'>
+        <Image
+          src={cube}
+          alt='ulc cube'
+          className='lg:aspect-2/1 aspect-square object-cover h-full'
+        />
+        <Section className='flex flex-col items-center justify-center bg-white aspect-2/1'>
+          <Anima>
             <h3 className='mt-auto font-bold text-4xl mr-auto'></h3>
             <p className='capitalize mb-auto mt-10 text-xl'>
               {home['offer-p1'].text}
             </p>
-          </Section>
-
-          <Section
-            className='flex flex-col items-center justify-center bg-white aspect-2/1 mt-10'
-            id={routes.hOffer}
-          >
-            <Anima>
-              <h3 className='mt-auto font-bold text-4xl mr-auto'>
-                {home['offer-p2']['title-p1']}{' '}
-                <span className='text-red'>{home['offer-p2']['title-p2']}</span>
-              </h3>
-              <ul className='capitalize mb-auto mt-10 lg:text-xl text-base list-disc ml-5'>
-                {home['offer-p2'].li.map((text, index) => (
-                  <li key={index}>{text}</li>
-                ))}
-              </ul>
-            </Anima>
-          </Section>
-          <Anima animationStart={['opacity-0']} animationEnd={['opacity-1']}>
-            <Image
-              src={ulc}
-              alt='ulc cube'
-              className='object-cover h-full mt-10 lg:mt-0'
-            />
           </Anima>
-        </article>
-      </Anima>
+        </Section>
+
+        <Section
+          className='flex flex-col items-center justify-center bg-white aspect-2/1 mt-10'
+          id={routes.hOffer}
+        >
+          <Anima>
+            <h3 className='mt-auto font-bold text-4xl mr-auto'>
+              {home['offer-p2']['title-p1']}{' '}
+              <span className='text-red'>{home['offer-p2']['title-p2']}</span>
+            </h3>
+            <ul className='capitalize mb-auto mt-10 lg:text-xl text-base list-disc ml-5'>
+              {home['offer-p2'].li.map((text, index) => (
+                <li key={index}>{text}</li>
+              ))}
+            </ul>
+          </Anima>
+        </Section>
+        <Anima animationStart={['opacity-0']} animationEnd={['opacity-1']}>
+          <Image
+            src={ulc}
+            alt='ulc cube'
+            className='object-cover h-full mt-10 lg:mt-0'
+          />
+        </Anima>
+      </article>
 
       <section className='lg:mt-20 mt-10'>
         <Section className='my-10' id={routes.hNews}>
@@ -119,7 +120,7 @@ export default async function Home({ params: { lang } }: PageProps) {
         <article className='grid lg:grid-cols-2 max-w-layout mx-auto lg:mt-0 mt-20'>
           <div />
           <Section className='flex flex-col items-center justify-center bg-white aspect-2/1'>
-            <Anima animationStart={['opacity-0']} animationEnd={['opacity-1']}>
+            <Anima>
               <h3 className='mt-auto font-bold text-4xl mr-auto'>
                 {home['why-ulc']['title-p1']}{' '}
                 <span className='text-red'>{home['why-ulc']['title-p2']}</span>?

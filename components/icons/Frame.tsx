@@ -7,13 +7,14 @@ export const Frame: React.FC<JSX.IntrinsicElements['svg']> = (props) => (
     xmlns='http://www.w3.org/2000/svg'
     {...props}
   >
-    <g opacity='0.72'>
-      <g opacity='0.15'>
+    <g>
+      <g>
         <path
           d='M445.219 163.28H163.279V445.22H445.219V163.28Z'
           stroke='black'
           strokeWidth='2.03'
           strokeMiterlimit='10'
+          className='opacity-10'
         />
         <path
           d='M360.829 247.67H247.669V360.83H360.829V247.67Z'

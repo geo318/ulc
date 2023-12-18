@@ -80,7 +80,7 @@ export function News({
             return (
               <div
                 key={index}
-                className='border-2 overflow-hidden rounded-3xl w-full lg:max-w-[25%]'
+                className='border-2 overflow-hidden rounded-3xl w-full lg:max-w-[25%] shrink-0'
               >
                 <Slide
                   description={news[`content_${getLangKey(lang)}`]}
