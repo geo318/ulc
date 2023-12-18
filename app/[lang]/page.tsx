@@ -86,10 +86,7 @@ export default async function Home({ params: { lang } }: PageProps) {
               </ul>
             </Anima>
           </Section>
-          <Anima
-            animationStart={['translate-x-full']}
-            animationEnd={['translate-x-0']}
-          >
+          <Anima animationStart={['opacity-0']} animationEnd={['opacity-1']}>
             <Image
               src={ulc}
               alt='ulc cube'
@@ -106,7 +103,9 @@ export default async function Home({ params: { lang } }: PageProps) {
           </h3>
         </Section>
         <Suspense fallback={<NewsSkeleton />}>
-          <NewsSlider lang={lang} action={home.news.action} />
+          <Anima>
+            <NewsSlider lang={lang} action={home.news.action} />
+          </Anima>
         </Suspense>
       </section>
       <section className='my-20 h-[100vw] relative flex flex-col'>
@@ -120,10 +119,7 @@ export default async function Home({ params: { lang } }: PageProps) {
         <article className='grid lg:grid-cols-2 max-w-layout mx-auto lg:mt-0 mt-20'>
           <div />
           <Section className='flex flex-col items-center justify-center bg-white aspect-2/1'>
-            <Anima
-              animationStart={['translate-x-full']}
-              animationEnd={['translate-x-0']}
-            >
+            <Anima animationStart={['opacity-0']} animationEnd={['opacity-1']}>
               <h3 className='mt-auto font-bold text-4xl mr-auto'>
                 {home['why-ulc']['title-p1']}{' '}
                 <span className='text-red'>{home['why-ulc']['title-p2']}</span>?

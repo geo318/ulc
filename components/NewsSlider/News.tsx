@@ -55,15 +55,13 @@ export function News({
                     key={index}
                     className='shadow-xl rounded-3xl overflow-hidden !h-auto'
                   >
-                    <Anima className='delay-300'>
-                      <Slide
-                        description={news[`content_${getLangKey(lang)}`]}
-                        title={news[`title_${getLangKey(lang)}`]}
-                        path={news.thumbnail}
-                        link={news.link ?? ''}
-                        action={action}
-                      />
-                    </Anima>
+                    <Slide
+                      description={news[`content_${getLangKey(lang)}`]}
+                      title={news[`title_${getLangKey(lang)}`]}
+                      path={news.thumbnail}
+                      link={news.link ?? ''}
+                      action={action}
+                    />
                   </SwiperSlide>
                 )
               })}
