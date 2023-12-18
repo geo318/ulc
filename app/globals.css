@@ -161,3 +161,15 @@ header img {
 .swiper {
   padding-bottom: 50px !important;
 }
+
+.dash {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1200;
+  animation: dash 3s linear forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

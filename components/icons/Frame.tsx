@@ -21,6 +21,7 @@ export const Frame: React.FC<JSX.IntrinsicElements['svg']> = (props) => (
           strokeWidth='2.03'
           strokeMiterlimit='10'
           fill='red'
+          className='frame-path'
         />
       </g>
       <g opacity='0.15'>
