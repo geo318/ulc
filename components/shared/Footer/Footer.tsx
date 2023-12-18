@@ -1,4 +1,11 @@
-import { EmailIcon, Logo, PhoneIcon, PinIcon, Section } from '/components'
+import {
+  Anima,
+  EmailIcon,
+  Logo,
+  PhoneIcon,
+  PinIcon,
+  Section,
+} from '/components'
 import { SharedText } from '/types'
 import { locales, routes } from '/config'
 import { Social } from './Social'
@@ -15,37 +22,42 @@ export const Footer = ({
   return (
     <footer className='relative bg-app-blue-dark flex flex-col overflow-hidden lg:bg-transparent lg:pt-0 pt-8 lg:rounded-none rounded-t-3xl font-medium'>
       <Section id={routes.hContact}>
-        <section className='grid lg:gap-0 gap-2 lg:grid-cols-2 divide-x divide-black lg:mt-32 mt-10 rounded-lg overflow-hidden bg-white bg-opacity-80 py-5'>
-          <div className='lg:p-10 p-5 flex flex-col gap-5'>
-            <div className='flex gap-5'>
-              <PhoneIcon className='[&_path]:fill-red shrink-0' />
-              <ul className='flex flex-col gap-5'>
-                <li>
-                  <a href='tel:+995 550 000 013' target='_blank'>
-                    +995 550 000 013
-                  </a>
-                </li>
-                <li>
-                  <a href='tel:+995 574 013 013' target='_blank'>
-                    +995 574 013 013
-                  </a>
-                </li>
-              </ul>
+        <Anima
+          animationStart={['translate-y-20']}
+          animationEnd={['translate-y-0']}
+        >
+          <section className='grid lg:gap-0 gap-2 lg:grid-cols-2 divide-x divide-black lg:mt-32 mt-10 rounded-lg overflow-hidden bg-white bg-opacity-80 py-5'>
+            <div className='lg:p-10 p-5 flex flex-col gap-5'>
+              <div className='flex gap-5'>
+                <PhoneIcon className='[&_path]:fill-red shrink-0' />
+                <ul className='flex flex-col gap-5'>
+                  <li>
+                    <a href='tel:+995 550 000 013' target='_blank'>
+                      +995 550 000 013
+                    </a>
+                  </li>
+                  <li>
+                    <a href='tel:+995 574 013 013' target='_blank'>
+                      +995 574 013 013
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-          <div className='lg:p-10 p-5 flex flex-col gap-5'>
-            <p className='flex gap-5 items-center'>
-              <EmailIcon className='[&_path]:fill-red shrink-0' />
-              <a href='mailto:contact@ulcterminal.ge' target='_blank'>
-                contact@ulcterminal.ge
-              </a>
-            </p>
-            <p className='flex gap-5 items-center'>
-              <PinIcon className='shrink-0'/>
-              Gardabani. Martyofi, Mon-Fri: 9:00 - 21:00
-            </p>
-          </div>
-        </section>
+            <div className='lg:p-10 p-5 flex flex-col gap-5'>
+              <p className='flex gap-5 items-center'>
+                <EmailIcon className='[&_path]:fill-red shrink-0' />
+                <a href='mailto:contact@ulcterminal.ge' target='_blank'>
+                  contact@ulcterminal.ge
+                </a>
+              </p>
+              <p className='flex gap-5 items-center'>
+                <PinIcon className='shrink-0' />
+                Gardabani. Martyofi, Mon-Fri: 9:00 - 21:00
+              </p>
+            </div>
+          </section>
+        </Anima>
       </Section>
       <Image
         src={footer}

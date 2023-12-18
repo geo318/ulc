@@ -10,7 +10,7 @@ export const Navbar: React.FC<NavbarProps> = ({ text, lang }) => {
   return (
     <Header>
       <Section className='px-0'>
-        <div className='flex items-center grow bg-gradient-to-r from-[rgba(255,255,255,0.15)] to-[rgba(255,255,255,0.40)] bg-opacity-90 lg:rounded-xl lg:mt-12 lg:py-6 py-3 px-9'>
+        <div className='fade-in flex items-center grow bg-gradient-to-r from-[rgba(255,255,255,0.15)] to-[rgba(255,255,255,0.40)] bg-opacity-90 lg:rounded-xl lg:mt-12 lg:py-6 py-3 px-9'>
           <Link href={`/${lang}${routes.home}`} className={'mr-auto mt-auto'}>
             <Logo className='lg:w-[12.5rem] mt-auto w-32 z-50' />
           </Link>

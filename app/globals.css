@@ -23,6 +23,10 @@
   }
 }
 
+body {
+  overflow-x: hidden;
+}
+
 header > div,
 header img {
   transition: 150ms;
@@ -41,6 +45,19 @@ header img {
 
 .fade-in {
   animation: fade-in 500ms forwards ease-in;
+}
+
+.move-up {
+  animation: move-up 500ms forwards ease-in;
+}
+
+@keyframes move-up {
+  from {
+    transform: translateY(10%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 @keyframes fade-in {

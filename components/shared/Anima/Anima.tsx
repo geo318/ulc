@@ -18,7 +18,7 @@ export function Anima({
   return (
     <div
       ref={ref}
-      className={twMerge('transition-all duration-300 delay-300', className)}
+      className={twMerge('transition-all duration-300 delay-100', className)}
     >
       {children}
     </div>

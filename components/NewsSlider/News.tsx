@@ -1,6 +1,6 @@
 'use client'
 
-import { Section } from '/components'
+import { Anima, Section } from '/components'
 import { Locale, News } from '/types'
 import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
@@ -55,13 +55,15 @@ export function News({
                     key={index}
                     className='shadow-xl rounded-3xl overflow-hidden !h-auto'
                   >
-                    <Slide
-                      description={news[`content_${getLangKey(lang)}`]}
-                      title={news[`title_${getLangKey(lang)}`]}
-                      path={news.thumbnail}
-                      link={news.link ?? ''}
-                      action={action}
-                    />
+                    <Anima className='delay-300'>
+                      <Slide
+                        description={news[`content_${getLangKey(lang)}`]}
+                        title={news[`title_${getLangKey(lang)}`]}
+                        path={news.thumbnail}
+                        link={news.link ?? ''}
+                        action={action}
+                      />
+                    </Anima>
                   </SwiperSlide>
                 )
               })}
