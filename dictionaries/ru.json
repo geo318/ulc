@@ -41,7 +41,28 @@
       "home-offer": "Предложение"
     },
     "footer": {
-      "copy": "© 2023 ULC Terminal. все права защищены"
+      "copy": "© 2023 ULC Terminal. все права защищены",
+      "useful": {
+        "title": "Полезные ссылки",
+        "list": [
+          {
+            "title": "Поиск транспортных средств",
+            "link": "https://rs.ge/cargovehiclesearch?cat=3&tab=1"
+          },
+          {
+            "title": "Поиск посылок",
+            "link": "https://rs.ge/parcelsearch?cat=4&tab=1"
+          },
+          {
+            "title": "Поиск Цвета коридора",
+            "link": "https://rs.ge/searchforcorridorcolor?cat=5&tab=1"
+          },
+          {
+            "title": "HS коды",
+            "link": "https://rs.ge/commoditycodes?cat=2&tab=1"
+          }
+        ]
+      }
     }
   }
 }

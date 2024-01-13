@@ -41,7 +41,28 @@
       "home-offer": "Offer"
     },
     "footer": {
-      "copy": "© 2023 ULC Terminal. all rights reserved"
+      "copy": "© 2023 ULC Terminal. all rights reserved",
+      "useful": {
+        "title": "Useful Links",
+        "list": [
+          {
+            "title": "Vehicle Search",
+            "link": "https://rs.ge/cargovehiclesearch?cat=3&tab=1"
+          },
+          {
+            "title": "Parcel Search",
+            "link": "https://rs.ge/parcelsearch?cat=4&tab=1"
+          },
+          {
+            "title": "Corridor colors",
+            "link": "https://rs.ge/searchforcorridorcolor?cat=5&tab=1"
+          },
+          {
+            "title": "HS codes",
+            "link": "https://rs.ge/commoditycodes?cat=2&tab=1"
+          }
+        ]
+      }
     }
   }
 }

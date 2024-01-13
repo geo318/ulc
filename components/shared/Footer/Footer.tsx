@@ -11,6 +11,7 @@ import { locales, routes } from '/config'
 import { Social } from './Social'
 import { footer } from '/public'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export const Footer = ({
   text,
@@ -22,7 +23,7 @@ export const Footer = ({
   return (
     <footer className='relative bg-app-blue-dark flex flex-col overflow-hidden lg:bg-transparent lg:pt-0 pt-8 lg:rounded-none rounded-t-3xl font-medium'>
       <Section id={routes.hContact}>
-        <section className='grid lg:gap-0 gap-2 lg:grid-cols-2 divide-x divide-black lg:mt-32 mt-10 rounded-lg overflow-hidden bg-white bg-opacity-80 py-5'>
+        <section className='grid lg:gap-0 gap-2 lg:grid-cols-3 lg:divide-x lg:divide-y-0 divide-y lg:divide-black divide-slate-500 lg:mt-32 mt-10 rounded-lg overflow-hidden bg-white bg-opacity-80 py-5'>
           <div className='lg:p-10 p-5 lg:pb-10 pb-0 flex flex-col gap-5'>
             <div className='flex gap-5'>
               <PhoneIcon className='[&_path]:fill-red shrink-0' />
@@ -39,8 +40,6 @@ export const Footer = ({
                 </li>
               </ul>
             </div>
-          </div>
-          <div className='lg:p-10 p-5 flex flex-col gap-5'>
             <p className='flex gap-5 items-center'>
               <EmailIcon className='[&_path]:fill-red shrink-0' />
               <a href='mailto:contact@ulcterminal.ge' target='_blank'>
@@ -51,6 +50,19 @@ export const Footer = ({
               <PinIcon className='shrink-0' />
               Gardabani. Martyofi, Mon-Fri: 9:00 - 21:00
             </p>
+          </div>
+          <div className='lg:px-10 lg:py-6 px-5 pt-10 lg:mt-0 mt-10'>
+            <h3 className='text-2xl font-bold mb-5'>{text.useful.title}</h3>
+            <ul className='flex flex-col gap-5 list-disc ml-5 mb-5 lg:mb-0'>
+              {text.useful.list.map(({ title, link }) => (
+                <li key={title} className='hover:underline'>
+                  <Link href={link} target='_blank'>{title}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            
           </div>
         </section>
       </Section>
