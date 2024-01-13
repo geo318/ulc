@@ -13,6 +13,8 @@ import {
 } from '/components'
 import { Suspense } from 'react'
 import { routes } from '/config'
+import Link from 'next/link'
+import { partners } from '/config/partners'
 
 export default async function Home({ params: { lang } }: PageProps) {
   const { home, shared } = await getDictionary(lang)
@@ -144,6 +146,29 @@ export default async function Home({ params: { lang } }: PageProps) {
           </Anima>
         </article>
       </section>
+      <Section className='lg:px-24 px-6 lg:my-10'>
+        <h3 className='mt-auto font-bold text-4xl mr-auto'>
+          {home.partners.title}
+        </h3>
+        <div className='grid grid-cols-3 my-20'>
+          {partners.map((partner) => (
+            <Link
+              href={partner.link}
+              key={partner.title}
+              className='justify-center items-center flex max-h-24'
+              target='_blank'
+            >
+              <Image
+                src={partner.img}
+                alt={partner.title}
+                width={180}
+                height={100}
+                className='object-contain h-full'
+              />
+            </Link>
+          ))}
+        </div>
+      </Section>
     </main>
   )
 }
