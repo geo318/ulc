@@ -74,12 +74,10 @@ header img {
 }
 
 .start-animation {
-  translate: -10%;
   opacity: 0;
 }
 
 .end-animation {
-  translate: 0 0;
   opacity: 1;
 }
 

@@ -34,12 +34,12 @@ export default async function Home({ params: { lang } }: PageProps) {
           <H
             tag='h1'
             size='max'
-            className='move-up text-white capitalize lg:mt-[10%] my-32 lg:mb-[15%] lg:leading-[1.1] leading-normal txt-balanced'
+            className='text-white capitalize lg:mt-[10%] my-32 lg:mb-[15%] lg:leading-[1.1] leading-normal txt-balanced'
           >
             shipping has never been so easy
           </H>
         </Section>
-        <article className='grid lg:grid-cols-2 max-w-layout mx-auto move-up'>
+        <article className='grid lg:grid-cols-2 max-w-layout mx-auto'>
           <Section
             className='flex flex-col items-center justify-center bg-white aspect-2/1 py-8'
             id={routes.hAbout}
@@ -110,13 +110,13 @@ export default async function Home({ params: { lang } }: PageProps) {
         </Suspense>
       </section>
       <section className='my-20 h-[100vw] relative flex flex-col'>
-        <Anima
+        {/* <Anima
           animationStart={['[&_.frame-path]:stroke-[2]']}
           animationEnd={['[&_.frame-path]:stroke-[150]']}
           className='[&_.frame-path]:delay-1000 [&_.frame-path]:transition-all [&_.frame-path]:duration-500 [&_.frame-path]:ease-in-out'
-        >
-          <Frame className='w-full absolute inset-0 h-full' />
-        </Anima>
+        > */}
+        <Frame className='w-full absolute inset-0 h-full' />
+        {/* </Anima> */}
         <article className='grid lg:grid-cols-2 max-w-layout mx-auto lg:mt-0 mt-20'>
           <div />
           <Section className='flex flex-col items-center justify-center bg-white aspect-2/1'>
