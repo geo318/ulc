@@ -16,7 +16,23 @@ import { routes } from '/config'
 
 export default async function Home({ params: { lang } }: PageProps) {
   const { home, shared } = await getDictionary(lang)
+  type Person = {
+    name: string
+    age: number
+    isMarried: boolean
+  }
+  type people = {
+    subscribed_nino: Person
+    subscribed_gio: Person
+    subscribed_io: Person
+    john: Person
+    jane: Person
+  }
 
+  type IsSubscribed<TObj> = {
+    [P in keyof TObj as P extends `subscribed_${infer Z}` ? Z : never]: TObj[P]
+  }
+  type X = IsSubscribed<people>
   return (
     <main className='flex min-h-screen flex-col'>
       <div className='relative'>

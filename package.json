@@ -11,12 +11,14 @@
     "migrate": "drizzle-kit generate:sqlite",
     "migrations:push": "node -r esbuild-register ./server/database/migrate.ts",
     "db:push": "drizzle-kit push:sqlite",
-    "migrations:drop": "drizzle-kit drop --config=drizzle.config.ts"
+    "migrations:drop": "drizzle-kit drop --config=drizzle.config.ts",
+    "cypress:open": "cypress open"
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.5.2",
     "@hookform/resolvers": "^3.3.2",
     "better-sqlite3": "^9.2.2",
+    "dotenv": "^16.3.1",
     "drizzle-kit": "^0.20.6",
     "drizzle-orm": "^0.29.1",
     "drizzle-zod": "^0.5.1",
@@ -39,6 +41,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
+    "cypress": "^13.6.2",
     "eslint": "^8",
     "eslint-config-next": "14.0.3",
     "postcss": "^8",

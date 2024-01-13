@@ -30,6 +30,7 @@ export function Switcher({ className = '' }) {
         ref={ref}
         onClick={() => setIsOpened((prev) => !prev)}
         className='cursor-pointer rounded-lg bg-white px-2 lg:text-black text-red lg:block hidden'
+        data-test='switcher'
       >
         {lang}
       </div>
@@ -42,6 +43,7 @@ export function Switcher({ className = '' }) {
                 'border-y border-transparent lg:hidden block',
                 pathname.startsWith(`/${locale.key}`) && 'text-red'
               )}
+              data-test='switcher-dropdown'
             >
               <Link
                 href={pathname.replace(/^\/(en|ka|ru)/, `/${locale.key}`)}
