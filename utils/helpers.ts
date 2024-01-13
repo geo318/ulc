@@ -31,3 +31,8 @@ export const debounce = <T extends (...args: any[]) => void>(
     }, delay)
   }
 }
+
+export const getCurrencyRate = async (currency: string) =>
+  await (
+    await fetch(`https://api.businessonline.ge/api/rates/nbg/${currency}`)
+  ).json()

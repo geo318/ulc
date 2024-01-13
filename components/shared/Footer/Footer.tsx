@@ -1,19 +1,15 @@
-import {
-  Anima,
-  EmailIcon,
-  Logo,
-  PhoneIcon,
-  PinIcon,
-  Section,
-} from '/components'
+'use server'
+
+import { EmailIcon, Logo, PhoneIcon, PinIcon, Section } from '/components'
 import { SharedText } from '/types'
 import { locales, routes } from '/config'
 import { Social } from './Social'
 import { footer } from '/public'
 import Image from 'next/image'
 import Link from 'next/link'
+import { getCurrencyRate } from '/utils'
 
-export const Footer = ({
+export const Footer = async ({
   text,
   lang,
 }: {
@@ -56,13 +52,23 @@ export const Footer = ({
             <ul className='flex flex-col gap-5 list-disc ml-5 mb-5 lg:mb-0'>
               {text.useful.list.map(({ title, link }) => (
                 <li key={title} className='hover:underline'>
-                  <Link href={link} target='_blank'>{title}</Link>
+                  <Link href={link} target='_blank'>
+                    {title}
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
-          <div>
-            
+          <div className='lg:px-10 lg:py-6 px-5 pt-10 lg:mt-0 mt-10'>
+            <h3 className='text-2xl font-bold mb-5'>{text.rates.title}</h3>
+            <div className='mb-5 flex flex-col gap-5 lg:mb-0'>
+              {text.rates.list.map(async ({ currency, symbol }) => (
+                <div key={currency} className='hover:underline flex gap-3'>
+                  <span>{symbol}</span>
+                  <span>{await getCurrencyRate(currency)}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       </Section>

@@ -62,6 +62,15 @@
             "link": "https://rs.ge/commoditycodes?cat=2&tab=1"
           }
         ]
+      },
+      "rates": {
+        "title": "Курсы валют",
+        "list": [
+          { "currency": "usd", "symbol": "$" },
+          { "currency": "eur", "symbol": "€" },
+          { "currency": "trl", "symbol": "₺" },
+          { "currency": "gbp", "symbol": "£" }
+        ]
       }
     }
   }
