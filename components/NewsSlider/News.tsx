@@ -29,7 +29,7 @@ export function News({
   return (
     <Section className='w-full'>
       {isLoading && children}
-      {!isLoading && isMobile === false && news.length > 4 && (
+      {!isLoading && !isMobile && news.length > 4 && (
         <div className='relative'>
           <SlideArrow
             dir='left'
@@ -74,7 +74,7 @@ export function News({
           />
         </div>
       )}
-      {!isLoading && (isMobile === true || news.length < 5) && (
+      {!isLoading && isMobile && news.length < 5 && (
         <div className='flex flex-nowrap snap-mandatory overflow-x-auto gap-6 pb-3'>
           {news?.map((news, index) => {
             return (
