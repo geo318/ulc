@@ -173,6 +173,6 @@ header img {
 }
 
 .swiper-slide {
-  max-width: 25%;
+  max-width: calc(25% - 38px);
   margin-right: 50px;
 }
