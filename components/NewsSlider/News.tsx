@@ -29,70 +29,76 @@ export function News({
 
   return (
     <Section className='w-full'>
-      {!isMobile ? (
-        <div className='relative'>
-          <SlideArrow
-            dir='left'
-            swiper={swiper}
-            className='-ml-10 top-1/2 -translate-y-1/2 absolute lg:block hidden'
-          />
+      {!news.length && 'no news yet...'}
+      {!!news.length &&
+        (!isMobile ? (
+          <div className='relative'>
+            {news.length > 4 && (
+              <SlideArrow
+                dir='left'
+                swiper={swiper}
+                className='-ml-10 top-1/2 -translate-y-1/2 absolute lg:block hidden'
+              />
+            )}
 
-          <Swiper
-            modules={[Navigation]}
-            onSwiper={(swiperRef) => setSwiper(swiperRef)}
-            spaceBetween={50}
-            slidesPerView={4}
-            navigation={true}
-            ref={swiperRef}
-            loop
-          >
-            {news
-              ?.slice()
-              .reverse()
-              .map((news, index) => {
-                return (
-                  <SwiperSlide
-                    key={index}
-                    className='shadow-xl rounded-3xl overflow-hidden !h-auto'
-                  >
-                    <Slide
-                      description={news[`content_${getLangKey(lang)}`]}
-                      title={news[`title_${getLangKey(lang)}`]}
-                      path={news.thumbnail}
-                      link={news.link ?? ''}
-                      action={action}
-                    />
-                  </SwiperSlide>
-                )
-              })}
-          </Swiper>
+            <Swiper
+              modules={[Navigation]}
+              onSwiper={(swiperRef) => setSwiper(swiperRef)}
+              spaceBetween={50}
+              slidesPerView={4}
+              navigation={true}
+              ref={swiperRef}
+              loop
+            >
+              {news
+                ?.slice()
+                .reverse()
+                .map((news, index) => {
+                  return (
+                    <SwiperSlide
+                      key={index}
+                      className='shadow-xl rounded-3xl overflow-hidden !h-auto'
+                    >
+                      <Slide
+                        description={news[`content_${getLangKey(lang)}`]}
+                        title={news[`title_${getLangKey(lang)}`]}
+                        path={news.thumbnail}
+                        link={news.link ?? ''}
+                        action={action}
+                      />
+                    </SwiperSlide>
+                  )
+                })}
+            </Swiper>
 
-          <SlideArrow
-            dir='right'
-            swiper={swiper}
-            className='-mr-10 right-0 top-1/2 -translate-y-1/2 absolute swiper-button-next lg:block hidden'
-          />
-        </div>
-      ) : (
-        <div className='flex flex-nowrap snap-mandatory overflow-x-auto gap-6 pb-3'>
-          {news?.map((news, index) => {
-            return (
-              <div
-                key={index}
-                className='border-2 overflow-hidden rounded-3xl w-full lg:max-w-[25%] shrink-0'
-              >
-                <Slide
-                  description={news[`content_${getLangKey(lang)}`]}
-                  title={news[`title_${getLangKey(lang)}`]}
-                  path={news.thumbnail}
-                  link={news.link ?? ''}
-                  action={action}
-                />
-              </div>
-            )
-          })}
-        </div>
-      )}
+            {news.length > 4 && (
+              <SlideArrow
+                dir='right'
+                swiper={swiper}
+                className='-mr-10 right-0 top-1/2 -translate-y-1/2 absolute swiper-button-next lg:block hidden'
+              />
+            )}
+          </div>
+        ) : (
+          <div className='flex flex-nowrap snap-mandatory overflow-x-auto gap-6 pb-3'>
+            {news?.map((news, index) => {
+              return (
+                <div
+                  key={index}
+                  className='border-2 overflow-hidden rounded-3xl w-full lg:max-w-[25%] shrink-0'
+                >
+                  <Slide
+                    description={news[`content_${getLangKey(lang)}`]}
+                    title={news[`title_${getLangKey(lang)}`]}
+                    path={news.thumbnail}
+                    link={news.link ?? ''}
+                    action={action}
+                  />
+                </div>
+              )
+            })}
+          </div>
+        ))}
     </Section>
   )
 }
