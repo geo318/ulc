@@ -171,3 +171,8 @@ header img {
     stroke-dashoffset: 0;
   }
 }
+
+.swiper-slide {
+  max-width: 25%;
+  margin-right: 50px;
+}
