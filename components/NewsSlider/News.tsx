@@ -1,6 +1,6 @@
 'use client'
 
-import { Anima, Section } from '/components'
+import { Section } from '/components'
 import { Locale, News } from '/types'
 import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
@@ -29,7 +29,7 @@ export function News({
   return (
     <Section className='w-full'>
       {isLoading && children}
-      {!isLoading && isMobile === false && news.length > 4 && (
+      {!isLoading && isMobile === false && news.length >= 4 && (
         <div className='relative'>
           <SlideArrow
             dir='left'
