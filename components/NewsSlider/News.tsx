@@ -24,12 +24,12 @@ export function News({
   action: string
 }) {
   const [swiper, setSwiper] = useState<SwiperClass | null>(null)
-  const { isMobile, isLoading } = useScreenWidth(1024)
+  const { isMobile } = useScreenWidth(1024)
   const swiperRef = useRef(null)
+
   return (
     <Section className='w-full'>
-      {isLoading && children}
-      {!isLoading && !isMobile && news.length > 4 && (
+      {!isMobile ? (
         <div className='relative'>
           <SlideArrow
             dir='left'
@@ -40,8 +40,8 @@ export function News({
           <Swiper
             modules={[Navigation]}
             onSwiper={(swiperRef) => setSwiper(swiperRef)}
-            spaceBetween={isMobile ? 0 : 50}
-            slidesPerView={isMobile ? 1 : 4}
+            spaceBetween={50}
+            slidesPerView={4}
             navigation={true}
             ref={swiperRef}
             loop
@@ -73,8 +73,7 @@ export function News({
             className='-mr-10 right-0 top-1/2 -translate-y-1/2 absolute swiper-button-next lg:block hidden'
           />
         </div>
-      )}
-      {!isLoading && isMobile && news.length < 5 && (
+      ) : (
         <div className='flex flex-nowrap snap-mandatory overflow-x-auto gap-6 pb-3'>
           {news?.map((news, index) => {
             return (
