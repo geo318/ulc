@@ -86,7 +86,7 @@ export const Footer = async ({
         </section>
       </Section>
       <p className='mr-auto text-center text-white lg:text-sm text-xs my-10 w-full'>
-        {text.copy}
+        {text.copy.replace('2023', new Date().getFullYear().toString())}
       </p>
     </footer>
   )
