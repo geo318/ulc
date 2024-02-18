@@ -38,8 +38,8 @@ export const Footer = async ({
             </div>
             <p className='flex gap-5 items-center'>
               <EmailIcon className='[&_path]:fill-red shrink-0' />
-              <a href='mailto:contact@ulcterminal.ge' target='_blank'>
-                contact@ulcterminal.ge
+              <a href='mailto:info@ulcterminal.ge' target='_blank'>
+                Info@ULCterminal.ge
               </a>
             </p>
             <p className='flex gap-5 items-center'>
