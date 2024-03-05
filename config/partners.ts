@@ -1,4 +1,4 @@
-import { horizont, rhino, roofings } from '/public'
+import { horizont, rhino, roofings, tid } from '/public'
 
 export const partners = [
   {
@@ -15,6 +15,11 @@ export const partners = [
   {
     title: 'Horizont',
     img: horizont,
+    link: '',
+  },
+  {
+    title: 'Trade Imperial Distribution',
+    img: tid,
     link: '',
   },
 ]
