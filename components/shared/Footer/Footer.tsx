@@ -25,8 +25,8 @@ export const Footer = async ({
               <PhoneIcon className='[&_path]:fill-red shrink-0' />
               <ul className='flex flex-col gap-5'>
                 <li>
-                  <a href='tel:+995 550 000 013' target='_blank'>
-                    +995 550 000 013
+                  <a href='tel:+995 597 003 113' target='_blank'>
+                    +995 597 003 113
                   </a>
                 </li>
                 <li>
