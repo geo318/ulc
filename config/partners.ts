@@ -1,4 +1,17 @@
-import { horizont, rhino, roofings, tid, al, bgt, code, wl, sp, avme } from '/public'
+import {
+  horizont,
+  rhino,
+  roofings,
+  tid,
+  al,
+  bgt,
+  code,
+  wl,
+  sp,
+  avme,
+  demirkol,
+  egt,
+} from '/public'
 
 export const partners = [
   {
@@ -11,7 +24,6 @@ export const partners = [
     img: roofings,
     link: 'https://www.roofingsme.com/',
   },
-
   {
     title: 'Horizont',
     img: horizont,
@@ -50,6 +62,16 @@ export const partners = [
   {
     title: 'AVME',
     img: avme,
+    link: '',
+  },
+  {
+    title: 'Demirkol',
+    img: demirkol,
+    link: '',
+  },
+  {
+    title: 'EGT',
+    img: egt,
     link: '',
   },
 ]

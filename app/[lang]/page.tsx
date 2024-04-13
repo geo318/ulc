@@ -144,7 +144,7 @@ export default async function Home({ params: { lang } }: PageProps) {
         <h3 className='mt-auto font-bold text-4xl mr-auto'>
           {home.partners.title}
         </h3>
-        <div className='grid lg:grid-cols-5 grid-cols-2 gap-4 gap-y-10 my-20'>
+        <div className='grid lg:grid-cols-6 grid-cols-2 gap-4 gap-y-10 my-20'>
           {partners.map((partner) => (
             <Link
               href={partner.link}

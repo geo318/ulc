@@ -8,5 +8,20 @@ import code from './code.jpeg'
 import sp from './sp.png'
 import wl from './wl.png'
 import avme from './avme.jpeg'
+import demirkol from './demirkol.jpeg'
+import egt from './egt.jpeg'
 
-export { horizont, rhino, roofings, tid, al, bgt, code, wl, sp, avme }
+export {
+  horizont,
+  rhino,
+  roofings,
+  tid,
+  al,
+  bgt,
+  code,
+  wl,
+  sp,
+  avme,
+  demirkol,
+  egt,
+}
